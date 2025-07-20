@@ -1,0 +1,19 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  VITE_API_URL = "https://fitzone-backend.up.railway.app/api"
+  VITE_APP_NAME = "FitZone"
+  VITE_APP_VERSION = "1.0.0"
+
+[context.deploy-preview.environment]
+  VITE_API_URL = "https://fitzone-backend.up.railway.app/api"
